@@ -259,14 +259,15 @@ html[data-theme="dark"] .theme-toggle .icon-moon{display:block}
 .h-desc{color:var(--muted);font-size:13.5px;line-height:1.55}
 
 /* Year divisions (History page) */
-.year-division{border-top:1px solid var(--rule);padding:56px 0}
+.year-division{border-top:1px solid var(--rule);padding:48px 0}
 .year-division:first-of-type{border-top:none}
 .year-div-num{
-  font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--accent);font-weight:600;margin-bottom:10px;
+  font-family:var(--serif-headline);font-size:clamp(32px,5vw,48px);
+  color:var(--ink);font-weight:600;margin-bottom:24px;
 }
-.year-div-title{font-family:var(--serif-headline);font-size:clamp(26px,4vw,38px);color:var(--ink);margin:0 0 16px;font-weight:400}
-.year-div-text{color:var(--ink-2);font-size:15px;line-height:1.75;max-width:720px;margin:0 0 30px}
+.year-div-text{color:var(--ink-2);font-size:15px;line-height:1.75;max-width:720px;margin:24px 0 10px}
+.year-div-links{color:var(--muted);font-size:13.5px;line-height:1.6}
+.year-div-links a{color:var(--accent)}
 
 /* Auto-scrolling photo marquee */
 .marquee{
