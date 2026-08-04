@@ -268,23 +268,20 @@ html[data-theme="dark"] .theme-toggle .icon-moon{display:block}
 .year-div-links{color:var(--muted);font-size:13.5px;line-height:1.6}
 .year-div-links a{color:var(--accent)}
 
-/* Auto-scrolling photo carousel (steps one photo at a time, 1 visible) */
-.marquee{overflow:hidden;position:relative}
-.marquee-track{
-  display:flex;gap:20px;
-  overflow-x:hidden;scroll-behavior:smooth;
+/* Year detail page photo gallery (natural aspect ratio, no cropping) */
+.year-gallery{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:16px;margin:28px 0;
 }
-.marquee-photo{
-  flex:0 0 100%;
-  aspect-ratio:16/10;
-  background:var(--bg-soft);border:1px solid var(--rule);border-radius:3px;
-  overflow:hidden;display:flex;align-items:center;justify-content:center;
+.year-gallery figure{margin:0;background:var(--bg-soft);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.year-gallery img{width:100%;height:auto;display:block}
+
+/* Responsive video embed (year detail pages) */
+.video-embed{
+  position:relative;width:100%;padding-top:56.25%;margin:28px 0;
+  background:var(--bg-soft);border:1px solid var(--rule);border-radius:3px;overflow:hidden;
 }
-.marquee-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.marquee-photo .placeholder-num{
-  font-family:var(--sans);color:var(--rule);font-size:11px;
-  letter-spacing:.14em;text-transform:uppercase;
-}
+.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* Page hero */
 .page-hero{padding:40px 0 28px;border-bottom:1px solid var(--rule);background:var(--bg-soft)}
