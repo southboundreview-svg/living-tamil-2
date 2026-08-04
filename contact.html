@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Living Tamil</title>
+<meta name="description" content="Write to the Living Tamil Secretariat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/nav.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img class="brand-logo" src="assets/logo.svg" alt="">
+      <div class="brand-text">
+        <div class="brand-name">Living Tamil</div>
+        <div class="brand-tag">For World Literature</div>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav class="nav" id="site-nav">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="prize.html">The Prize</a>
+      <a href="vision.html">Vision</a>
+      <a href="committee.html">Committee</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="kicker">Contact</div>
+    <h1>Write to us.</h1>
+    <p>For nominations, press enquiries or a note from a fellow reader — the Secretariat replies to every letter.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h4>Secretariat</h4>
+        <p>Living Tamil, an initiative of the Vishnupuram Literary Circle<br>Administered by Vishnupuram Trust<br>Coimbatore · Chennai · New York · London · Vienna</p>
+
+        <h4>Email</h4>
+        <p>
+          General &amp; press · <a href="mailto:secretariat@livingtamil.org">secretariat@livingtamil.org</a><br>
+          Nominations · <a href="mailto:nominations@livingtamil.org">nominations@livingtamil.org</a><br>
+          Partnerships · <a href="mailto:partners@livingtamil.org">partners@livingtamil.org</a>
+        </p>
+
+        <h4>Follow</h4>
+        <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">YouTube</a> · <a href="#">LinkedIn</a></p>
+      </div>
+
+      <form class="contact-form" onsubmit="event.preventDefault();this.querySelector('.ok').hidden=false;this.reset();">
+        <div>
+          <label for="name">Your name</label>
+          <input id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" placeholder="Nomination, press, general…">
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button class="btn" type="submit">Send message</button>
+        <p class="ok" hidden>Thank you — we will write back soon.</p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <div class="brand-name">Living Tamil</div>
+        <div class="brand-tag">An initiative of the Vishnupuram Literary Circle</div>
+      </div>
+      <nav>
+        <a href="events.html">Events</a>
+        <a href="prize.html">The Prize</a>
+        <a href="vision.html">Vision</a>
+        <a href="committee.html">Committee</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="fine">
+      <div>© 2026 Living Tamil. All rights reserved.</div>
+      <div>secretariat@livingtamil.org</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
