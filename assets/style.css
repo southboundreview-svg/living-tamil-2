@@ -283,6 +283,23 @@ html[data-theme="dark"] .theme-toggle .icon-moon{display:block}
 }
 .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
+/* Interspersed prose photos (year detail pages) — single photo breaking the text flow */
+.prose-figure{margin:32px 0;background:var(--bg-soft);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.prose-figure img{width:100%;height:auto;display:block}
+.prose-figure figcaption{padding:10px 14px;font-size:12.5px;color:var(--muted);line-height:1.5;border-top:1px solid var(--rule)}
+/* Interspersed prose photos — two side by side */
+.prose-figure-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0}
+.prose-figure-pair figure{margin:0;background:var(--bg-soft);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.prose-figure-pair img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3}
+@media (max-width:640px){.prose-figure-pair{grid-template-columns:1fr}}
+
+/* History index intro (award + laureate + festival photo) */
+.history-intro{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;margin-bottom:8px}
+.history-intro p{color:var(--ink-2);font-size:15px;line-height:1.75;max-width:560px}
+.history-intro .h-intro-photo{border-radius:3px;overflow:hidden;border:1px solid var(--rule);background:var(--bg-soft)}
+.history-intro .h-intro-photo img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3}
+@media (max-width:800px){.history-intro{grid-template-columns:1fr}}
+
 /* Page hero */
 .page-hero{padding:40px 0 28px;border-bottom:1px solid var(--rule);background:var(--bg-soft)}
 .page-hero .kicker{
