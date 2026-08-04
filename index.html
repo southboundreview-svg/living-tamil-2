@@ -240,12 +240,39 @@
 <script>
   const track = document.getElementById('posters-track');
   const dotsWrap = document.getElementById('posters-dots');
+  let autoTimer = null;
+  let resumeTimer = null;
+
+  function stopAuto() {
+    if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+  }
+  function startAuto() {
+    if (!track || autoTimer) return;
+    autoTimer = setInterval(() => {
+      const posters = [...track.children];
+      const idx = Math.round(track.scrollLeft / (posters[0].offsetWidth + 16));
+      if (idx >= posters.length - 1) {
+        track.scrollTo({left: 0, behavior: 'smooth'});
+      } else {
+        scrollPosters(1, false);
+      }
+    }, 4500);
+  }
+  function pauseThenResume() {
+    stopAuto();
+    if (resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(startAuto, 6000);
+  }
+
   if (track && dotsWrap) {
     const posters = [...track.children];
     posters.forEach((_, i) => {
       const d = document.createElement('span');
       d.className = 'dot' + (i === 0 ? ' on' : '');
-      d.addEventListener('click', () => posters[i].scrollIntoView({behavior:'smooth', inline:'start', block:'nearest'}));
+      d.addEventListener('click', () => {
+        posters[i].scrollIntoView({behavior:'smooth', inline:'start', block:'nearest'});
+        pauseThenResume();
+      });
       dotsWrap.appendChild(d);
     });
     track.addEventListener('scroll', () => {
@@ -253,11 +280,16 @@
       const idx = Math.round(track.scrollLeft / (posters[0].offsetWidth + 16));
       [...dotsWrap.children].forEach((d, i) => d.classList.toggle('on', i === idx));
     });
+    track.addEventListener('mouseenter', stopAuto);
+    track.addEventListener('mouseleave', startAuto);
+    track.addEventListener('touchstart', pauseThenResume, {passive:true});
+    startAuto();
   }
-  function scrollPosters(dir) {
+  function scrollPosters(dir, manual = true) {
     if (!track) return;
     const step = (track.firstElementChild?.offsetWidth || 300) + 16;
     track.scrollBy({left: dir * step, behavior: 'smooth'});
+    if (manual) pauseThenResume();
   }
 </script>
 
