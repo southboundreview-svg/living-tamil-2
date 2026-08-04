@@ -348,8 +348,8 @@ html[data-theme="dark"] .theme-toggle .icon-moon{display:block}
   display:flex;flex-direction:column;align-items:flex-start;
 }
 .member .photo{
-  width:96px;height:96px;border-radius:50%;
-  overflow:hidden;flex-shrink:0;margin-bottom:18px;
+  width:160px;height:160px;border-radius:50%;
+  overflow:hidden;flex-shrink:0;margin-bottom:20px;
   background:var(--bg-soft);border:1px solid var(--rule);
 }
 .member .photo img{width:100%;height:100%;object-fit:cover;display:block}
@@ -468,7 +468,7 @@ form .ok{color:var(--accent);font-size:14px;margin:0}
   .newslist article{padding:20px 18px}
   .newslist .meta{font-size:10.5px;letter-spacing:.14em}
   .member .name{font-size:16px}
-  .member .photo{width:80px;height:80px;margin-bottom:14px}
+  .member .photo{width:120px;height:120px;margin-bottom:16px}
   .member .bio{font-size:13px}
   .poster{padding:16px}
   .poster .p-title{font-size:17px}
