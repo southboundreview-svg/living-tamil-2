@@ -142,6 +142,25 @@ p{margin:0 0 1em;color:var(--ink-2)}
 .nav-toggle.open span:nth-child(2){opacity:0}
 .nav-toggle.open span:nth-child(3){top:18px;transform:rotate(-45deg)}
 
+/* Splash screen */
+.splash{
+  position:fixed;inset:0;z-index:9999;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:18px;background:var(--bg);
+  transition:opacity .4s ease;
+}
+.splash.hide{opacity:0;pointer-events:none}
+.splash-logo{width:64px;height:64px}
+.splash-name{
+  font-family:var(--serif);font-weight:600;font-size:28px;
+  color:var(--ink);text-align:center;margin:0;
+}
+.splash-name em{font-style:italic;color:var(--accent)}
+.splash-tag{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);text-align:center;max-width:260px;
+}
+
 /* Theme toggle */
 .theme-toggle{
   width:38px;height:38px;padding:0;flex-shrink:0;

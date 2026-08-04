@@ -9,10 +9,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
-<script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 <script src="assets/nav.js" defer></script>
 </head>
 <body>
+
+<div class="splash" id="splash">
+  <img class="splash-logo" src="assets/logo.svg" alt="">
+  <div class="splash-name"><em>Living</em> Tamil</div>
+  <div class="splash-tag">Association for World Literature (LTAWL)</div>
+</div>
+<script>
+(function(){
+  var splash = document.getElementById('splash');
+  if (!splash) return;
+  if (sessionStorage.getItem('ltawl-splash-shown')) {
+    splash.remove();
+    return;
+  }
+  sessionStorage.setItem('ltawl-splash-shown', '1');
+  setTimeout(function(){
+    splash.classList.add('hide');
+    setTimeout(function(){ splash.remove(); }, 400);
+  }, 1000);
+})();
+</script>
 
 <header class="site-header">
   <div class="wrap">
