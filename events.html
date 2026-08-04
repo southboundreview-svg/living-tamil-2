@@ -27,10 +27,16 @@
     return;
   }
   sessionStorage.setItem('ltawl-splash-shown', '1');
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){
+      splash.classList.add('show');
+    });
+  });
   setTimeout(function(){
+    splash.classList.remove('show');
     splash.classList.add('hide');
     setTimeout(function(){ splash.remove(); }, 500);
-  }, 2000);
+  }, 2500);
 })();
 </script>
 
